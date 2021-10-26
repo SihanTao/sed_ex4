@@ -1,6 +1,5 @@
 package ic.doc.templatemethod;
 
-import ic.doc.strategy.FibonacciSequence;
 import org.junit.Test;
 
 import static ic.doc.matchers.IterableBeginsWith.beginsWith;
