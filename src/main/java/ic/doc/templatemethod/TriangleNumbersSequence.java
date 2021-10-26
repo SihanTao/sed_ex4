@@ -1,8 +1,6 @@
 package ic.doc.templatemethod;
 
-import java.util.Iterator;
-
-public class TriangleNumbersSequence extends Sequence implements Iterable<Integer> {
+public class TriangleNumbersSequence extends Sequence {
 
   @Override
   protected int calculateTerm(int i) {
