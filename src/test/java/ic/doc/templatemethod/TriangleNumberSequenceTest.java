@@ -19,11 +19,14 @@ public class TriangleNumberSequenceTest {
   }
 
   @Test
-  public void definesSubsequentTermsToBeTheSumOfThePreviousTwo() {
+  public void hasEachTermEqualToTheFormula() {
 
-    assertThat(sequence.term(2), is(2));
-    assertThat(sequence.term(3), is(3));
-    assertThat(sequence.term(4), is(5));
+    assertThat(sequence.term(0), is(1));
+    assertThat(sequence.term(1), is(3));
+    assertThat(sequence.term(2), is(6));
+    assertThat(sequence.term(3), is(10));
+    assertThat(sequence.term(4), is(15));
+    assertThat(sequence.term(5), is(21));
   }
 
   @Test
