@@ -11,7 +11,7 @@ import static org.junit.Assert.fail;
 
 public class TriangleNumberSequenceTest {
 
-  final ic.doc.strategy.FibonacciSequence sequence = new FibonacciSequence();
+  final ic.doc.templatemethod.TriangleNumbersSequence sequence = new TriangleNumbersSequence();
 
   @Test
   public void definesFirstTermToBeOne() {
