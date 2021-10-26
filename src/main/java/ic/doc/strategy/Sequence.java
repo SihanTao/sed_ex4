@@ -2,15 +2,16 @@ package ic.doc.strategy;
 
 import java.util.Iterator;
 
-public abstract class Sequence implements Iterable<Integer> {
-  public int term(int i) {
-    if (i < 0) {
-      throw new IllegalArgumentException("Not defined for indices < 0");
-    }
-    return calculateTerm(i);
+public class Sequence implements Iterable<Integer> {
+  public SequenceHandler getSequenceHandler() {
+    return sequenceHandler;
   }
 
-  protected abstract int calculateTerm(int i);
+  private SequenceHandler sequenceHandler;
+
+  public Sequence(SequenceHandler sequenceHandler) {
+    this.sequenceHandler = sequenceHandler;
+  }
 
   public Iterator<Integer> iterator() {
     return new SequenceIterator();
@@ -27,7 +28,7 @@ public abstract class Sequence implements Iterable<Integer> {
 
     @Override
     public Integer next() {
-      return term(index++);
+      return sequenceHandler.term(index++);
     }
 
     @Override
