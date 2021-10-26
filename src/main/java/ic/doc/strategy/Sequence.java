@@ -3,11 +3,12 @@ package ic.doc.strategy;
 import java.util.Iterator;
 
 public class Sequence implements Iterable<Integer> {
+
+  private SequenceHandler sequenceHandler;
+
   public SequenceHandler getSequenceHandler() {
     return sequenceHandler;
   }
-
-  private SequenceHandler sequenceHandler;
 
   public Sequence(SequenceHandler sequenceHandler) {
     this.sequenceHandler = sequenceHandler;
