@@ -1,6 +1,5 @@
 package ic.doc.strategy;
 
-import ic.doc.templatemethod.TriangleNumbersSequence;
 import org.junit.Test;
 
 import static ic.doc.matchers.IterableBeginsWith.beginsWith;
@@ -11,7 +10,7 @@ import static org.junit.Assert.fail;
 
 public class TriangleNumberSequenceTest {
 
-  final ic.doc.templatemethod.TriangleNumbersSequence sequence = new TriangleNumbersSequence();
+  final ic.doc.strategy.TriangleNumbersSequence sequence = new TriangleNumbersSequence();
 
   @Test
   public void definesFirstTermToBeOne() {
