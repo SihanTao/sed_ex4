@@ -1,30 +1,32 @@
 package ic.doc.strategy;
 
+import org.junit.Test;
+
 import static ic.doc.matchers.IterableBeginsWith.beginsWith;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.fail;
 
-import org.junit.Test;
+public class TriangleNumbersSequenceTest {
 
-public class FibonacciSequenceTest {
-
-  final NumbersSequence sequence = new NumbersSequence(new FibonacciSequenceTermGenerator());
+  final NumbersSequence sequence = new NumbersSequence(new TriangleNumbersTermGenerator());
 
   @Test
-  public void definesFirstTwoTermsToBeOne() {
+  public void definesFirstTermToBeOne() {
 
     assertThat(sequence.term(0), is(1));
-    assertThat(sequence.term(1), is(1));
+
   }
 
   @Test
-  public void definesSubsequentTermsToBeTheSumOfThePreviousTwo() {
+  public void definesSubsequentTermsToBeK() {
+    // k = ( n + 1 )(n + 2) / 2
 
-    assertThat(sequence.term(2), is(2));
-    assertThat(sequence.term(3), is(3));
-    assertThat(sequence.term(4), is(5));
+    assertThat(sequence.term(1), is(3));
+    assertThat(sequence.term(2), is(6));
+    assertThat(sequence.term(3), is(10));
+
   }
 
   @Test
@@ -40,7 +42,7 @@ public class FibonacciSequenceTest {
 
   @Test
   public void canBeIteratedThrough() {
-    assertThat(sequence, beginsWith(1, 1, 2, 3, 5));
+    assertThat(sequence, beginsWith(1,3,6,10,15));
   }
 
 }
