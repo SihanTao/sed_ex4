@@ -28,21 +28,4 @@ public class TriangleNumbersSequenceTest {
     assertThat(sequence.term(3), is(10));
 
   }
-
-  @Test
-  public void isUndefinedForNegativeIndices() {
-
-    try {
-      sequence.term(-1);
-      fail("should have thrown exception");
-    } catch (IllegalArgumentException e) {
-      assertThat(e.getMessage(), containsString("Not defined for indices < 0"));
-    }
-  }
-
-  @Test
-  public void canBeIteratedThrough() {
-    assertThat(sequence, beginsWith(1,3,6,10,15));
-  }
-
 }

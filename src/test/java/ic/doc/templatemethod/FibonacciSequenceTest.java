@@ -27,20 +27,4 @@ public class FibonacciSequenceTest {
     assertThat(sequence.term(4), is(5));
   }
 
-  @Test
-  public void isUndefinedForNegativeIndices() {
-
-    try {
-      sequence.term(-1);
-      fail("should have thrown exception");
-    } catch (IllegalArgumentException e) {
-      assertThat(e.getMessage(), containsString("Not defined for indices < 0"));
-    }
-  }
-
-  @Test
-  public void canBeIteratedThrough() {
-    assertThat(sequence, beginsWith(1, 1, 2, 3, 5));
-  }
-
 }
